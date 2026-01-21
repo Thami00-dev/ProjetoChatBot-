@@ -25,8 +25,8 @@ Criar um chatbot simples, porém completo, com:
 ## 📚 Tecnologias Utilizadas
 
 - Java 17  
-- Spring Boot 4  
-- SDK Oficial OpenAI Java 4.x  
+- Spring Boot 3 
+- SDK Oficial OpenAI Java (Responses API)
 - Gradle  
 - Records (Java moderno)  
 - dotenv para variáveis de ambiente  
@@ -67,7 +67,7 @@ POST /api/chat
 
 {
   "message": "Explique o workshop",
-  "userId": "jackie"
+  "userId": "thami"
 }
 
 2️⃣ O Controller recebe a requisição
@@ -80,7 +80,7 @@ Chamando o cliente da OpenAI.
 
 4️⃣ O Client chama a OpenAI
 
-Usando o SDK oficial e_attachando a API Key via .env.
+Usando o SDK oficial e anexando a API Key via .env.
 
 5️⃣ O Prompt do sistema define o comportamento da IA
 
