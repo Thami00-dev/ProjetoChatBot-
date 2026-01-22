@@ -1,22 +1,92 @@
+/* Fundo da página */
 body {
-  font-family: Arial;
-  background: #f5f5f5;
-  padding: 20px;
+  background: linear-gradient(135deg, #ffd6e8, #ffeaf4);
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#chat {
+/* Caixa principal do chat */
+.chat-container {
   background: white;
-  padding: 10px;
+  width: 360px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Título */
+.chat-container h1 {
+  text-align: center;
+  color: #e75480;
+}
+
+/* Área das mensagens */
+#chat-box {
   height: 300px;
   overflow-y: auto;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff5fa;
+}
+/* Mensagens */
+.message {
+  padding: 10px 14px;
+  margin: 8px 0;
+  max-width: 70%;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333333; /* 🔥 ISSO É O MAIS IMPORTANTE */
 }
 
-.user {
-  color: blue;
+/* Mensagem do usuário */
+.message.user {
+  background-color: #ffb6c1;
+  align-self: flex-end;
+  margin-left: auto;
 }
 
-.bot {
-  color: green;
+/* Mensagem da IA */
+.message.bot {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* Mensagens */
+#chat-box p {
+  margin: 8px 0;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  gap: 10px;
+}
+
+/* Campo de texto */
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #f3aac8;
+  outline: none;
+}
+
+/* Botão */
+button {
+  background: #e75480;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Hover do botão */
+button:hover {
+  background: #d9436f;
 }

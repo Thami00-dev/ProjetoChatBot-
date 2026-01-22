@@ -2,19 +2,36 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>Chatbot IA</title>
+  <title>ChatBot AI 💗</title>
+
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h2>Chatbot IA</h2>
+  <!-- Container principal do chat -->
+  <div class="chat-container">
 
-  <input id="messageInput" placeholder="Digite sua mensagem" />
-  <button id="sendBtn">Enviar</button>
+    <!-- Título do chat -->
+    <h1>🤖 ChatBot AI</h1>
 
-  <p><strong>Resposta:</strong></p>
-  <div id="response"></div>
+    <!-- Área onde as mensagens aparecem -->
+    <div id="chat-box"></div>
 
-  <!-- IMPORTANTE: JS no final -->
+    <!-- Formulário para enviar mensagem -->
+    <form id="chat-form">
+      <input 
+        type="text"
+        id="message"
+        placeholder="Digite sua mensagem..."
+        autocomplete="off"
+      />
+      <button type="submit">Enviar</button>
+    </form>
+
+  </div>
+
+  <!-- Script do frontend -->
   <script src="app.js"></script>
 </body>
 </html>

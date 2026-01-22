@@ -27,6 +27,9 @@ app.post("/chat", async (req, res) => {
         userId: "frontend-user",
       }),
     });
+    if (!response.ok) {
+  throw new Error("Erro HTTP: " + response.status);
+  }
 
     const data = await response.json();
     res.json({ reply: data.answer });
