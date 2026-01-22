@@ -113,18 +113,26 @@ http://localhost:3001
 Antes da integração com o frontend, a API foi testada utilizando o Postman.
 
 Endpoint
+```
 POST
 
 http://localhost:8080/api/chat
+
+
 Corpo da requisição (JSON)
+
 {
   "message": "Explique este projeto",
   "userId": "thami"
 }
-🧠 Prompt do Sistema
+```
+
+
+## 🧠 Prompt do Sistema
 O comportamento da IA é definido no arquivo:
 
 backend/src/main/resources/prompts/system.txt
+
 Esse arquivo permite ajustar o tom e as regras da IA sem recompilar o projeto.
 
 
