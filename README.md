@@ -1,74 +1,132 @@
-# 🤖 ChatBot com Spring Boot e OpenAI
+# 🤖 ChatBot com Spring Boot, OpenAI e Node.js
 
-Bot inteligente desenvolvido em **Java + Spring Boot**, integrado com a **API oficial da OpenAI**.
+Chatbot inteligente desenvolvido com Java + Spring Boot no backend e Node.js no frontend, integrado à API oficial da OpenAI.
 
-Projeto criado para demonstrar uma arquitetura moderna, limpa e escalável para chatbots com IA generativa.
-
+Projeto criado para demonstrar uma arquitetura moderna, limpa e escalável, conectando backend e frontend de forma realista, como em aplicações profissionais.
 ---
 
 ## 🚀 Objetivo do Projeto
 
-Criar um chatbot simples, porém completo, com:
+Construir um chatbot funcional com IA generativa, contemplando:
 
-- API REST em Spring Boot  
-- DTOs usando **Records (Java moderno)**  
-- Serviço de orquestração  
-- Cliente OpenAI usando o **SDK oficial**  
-- Prompt do sistema configurável por arquivo  
-- Suporte a diferentes usuários via `userId`  
-- Integração com WhatsApp/Telegram *(em expansão)*  
-- Tratamento robusto de erros  
-- Logging estruturado  
+-API REST em Spring Boot
+-DTOs usando Records (Java moderno)
+-Serviço de orquestração
+-Cliente OpenAI usando o SDK oficial
+-Prompt do sistema configurável por arquivo
+-Suporte a múltiplos usuários (userId)
+-Frontend simples em Node.js
+-Testes iniciais via Postman
+-Integração completa Frontend → Backend → OpenAI
 
----
+##  Arquiterura geral 
+
+Frontend (Node.js + HTML/JS)
+        ↓
+Backend (Java + Spring Boot)
+        ↓
+OpenAI API
+
 
 ## 📚 Tecnologias Utilizadas
 
-- Java 17  
-- Spring Boot 3 
-- SDK Oficial OpenAI Java (Responses API)
-- Gradle  
-- Records (Java moderno)  
-- dotenv para variáveis de ambiente  
-
----
+**Backend**
+-Java 17
+-Spring Boot 3x
+-OpenAI Java SDK 3.x
+-Gradle
+-Records (Java moderno)
+**Frontend**
+-Node.js
+-Express
+-HTML, CSS e JavaScript
+-Fetch API
+**Outros**
+-Postman (para testes iniciais da API)
+-dotenv (variáveis de ambiente)
+-Git & GitHub
 
 ## 🗂 Estrutura do Projeto
 
 ```bash
-meu-chatbot-ai/
-├── src/
-│   └── main/
-│       ├── java/com/seuNome/chatbotai/
-│       │   ├── controller/
-│       │   │   └── ChatController.java
-│       │   ├── service/
-│       │   │   └── ChatService.java
-│       │   ├── client/
-│       │   │   └── OpenAIClient.java
-│       │   ├── dto/
-│       │   │   ├── ChatRequest.java
-│       │   │   └── ChatResponse.java
-│       │   └── ChatbotAiApplication.java
-│       └── resources/
-│           ├── prompts/
-│           │   └── system.txt
-│           └── application.properties
+chatbot-ai/
+├── backend/                  # Backend Java (Spring Boot)
+│   ├── src/main/java/...
+│   │   ├── controller/
+│   │   ├── service/
+│   │   ├── client/
+│   │   ├── dto/
+│   │   └── ChatbotAiApplication.java
+│   └── src/main/resources/
+│       ├── prompts/
+│       │   └── system.txt
+│       └── application.properties
+│
+├── frontend/                 # Frontend Node.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   └── app.js
+│   ├── server.js
+│   └── package.json
+│
 ├── .env
 ├── .gitignore
-├── build.gradle
 └── README.md
 ```
 
-🔁 Como Funciona
-1️⃣ O usuário envia uma requisição
+## ▶️ Como Executar o Projeto
 
-POST /api/chat
+Este projeto possui **backend (Java)** e **frontend (Node.js)**, que devem ser executados separadamente.
 
+---
+
+### 1️⃣ Backend (Java + Spring Boot)
+
+Acesse a pasta do backend:
+
+```bash
+cd backend
+Execute o projeto:
+
+./gradlew bootRun
+O backend ficará disponível em:
+
+http://localhost:8080/api/chat
+```
+2️⃣ Frontend (Node.js)
+Em outro terminal, acesse a pasta do frontend:
+```
+cd frontend
+Instale as dependências (caso ainda não tenha feito):
+
+npm install
+```
+Inicie o servidor Node:
+```
+node server.js
+O frontend ficará disponível em:
+
+http://localhost:3001
+```
+🧪 Testes com Postman (fase inicial)
+Antes da integração com o frontend, a API foi testada utilizando o Postman.
+
+Endpoint
+POST
+
+http://localhost:8080/api/chat
+Corpo da requisição (JSON)
 {
-  "message": "Explique o workshop",
+  "message": "Explique este projeto",
   "userId": "thami"
 }
+🧠 Prompt do Sistema
+O comportamento da IA é definido no arquivo:
+
+backend/src/main/resources/prompts/system.txt
+Esse arquivo permite ajustar o tom e as regras da IA sem recompilar o projeto.
+
 
 2️⃣ O Controller recebe a requisição
 
@@ -82,14 +140,7 @@ Chamando o cliente da OpenAI.
 
 Usando o SDK oficial e anexando a API Key via .env.
 
-5️⃣ O Prompt do sistema define o comportamento da IA
 
-Configurado no arquivo:
-
-src/main/resources/prompts/system.txt
-
-
-Sem precisar recompilar o projeto.
 
 🔐 Variáveis de Ambiente
 
@@ -97,23 +148,19 @@ Crie um arquivo .env na raiz do projeto:
 
 OPENAI_API_KEY=sua_chave_aqui
 
-▶️ Como Executar
-./gradlew bootRun
-
-
-A API ficará disponível em:
-
-http://localhost:8080/api/chat
-
 📌 Próximos Passos
 
-Integração com WhatsApp / Telegram
+Melhorar o layout do frontend
 
-Histórico de conversas por usuário
+Exibir indicador de “IA digitando…”
+
+Histórico de mensagens por usuário
 
 Autenticação
 
-Deploy em cloud (AWS / Railway / Render)
+Deploy em nuvem (AWS / Render / Railway)
+
+Integração com WhatsApp ou Telegram
 
 
 👩‍💻 Autora
