@@ -10,13 +10,21 @@ Projeto criado para demonstrar uma arquitetura moderna, limpa e escalável, cone
 Construir um chatbot funcional com IA generativa, contemplando:
 
 -API REST em Spring Boot
+
 -DTOs usando Records (Java moderno)
+
 -Serviço de orquestração
--Cliente OpenAI usando o SDK oficial
+
+-Cliente OpenAI usando o SDK oficial ( fiz usando o crédito inicial gratuito )
+
 -Prompt do sistema configurável por arquivo
+
 -Suporte a múltiplos usuários (userId)
+
 -Frontend simples em Node.js
+
 -Testes iniciais via Postman
+
 -Integração completa Frontend → Backend → OpenAI
 
 ##  Arquiterura geral 
